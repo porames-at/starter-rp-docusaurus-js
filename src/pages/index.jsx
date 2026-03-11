@@ -1,6 +1,6 @@
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import AppPdfViewer from "@site/src/components/AppPdfViewer";
-import { RPConfig } from "@pdf-viewer/react";
+import { RPConfig } from "@react-pdf-kit/viewer";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();

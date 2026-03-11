@@ -1,8 +1,8 @@
-# React PDF Starter Toolkit in Docusaurus and JavaScript
+# React PDF Kit Starter Toolkit in Docusaurus and JavaScript
 
 [![Open example in codesandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/github/react-pdf-dev/starter-rp-docusaurus-js/main)
 
-Welcome to the React PDF Starter Toolkit! This repository provides a comprehensive guide on integrating React PDF with Docusaurus and JavaScript. It showcases how React PDF can be integrated and rendered as part of a React.js project.
+Welcome to the React PDF Kit Starter Toolkit! This repository provides a comprehensive guide on integrating React PDF with Docusaurus and JavaScript. It showcases how the React PDF Viewer component can be integrated and rendered as part of a React.js project.
 
 ## Table of Contents
 
@@ -18,7 +18,7 @@ Welcome to the React PDF Starter Toolkit! This repository provides a comprehensi
 1. **Clone the Repository**: If you haven't already, clone the repository and navigate into the project directory.
 
    ```bash
-   git clone https://github.com/pdf-viewer-react/starter-rp-docusaurus-js.git
+   git clone https://github.com/porames-at/starter-rp-docusaurus-js.git
    cd starter-rp-docusaurus-js
    ```
 
@@ -36,7 +36,7 @@ Welcome to the React PDF Starter Toolkit! This repository provides a comprehensi
 
 ### Running the Example Project
 
-This repository includes an example project to demonstrate React PDF in action.
+This repository includes an example project to demonstrate React PDF Kit in action.
 
 1. **Start the Development Server**: Use the following command to start the development server
 
@@ -60,13 +60,13 @@ Once the example project is running, you can explore the source code to see how 
 
 ```jsx
 import {
-  RPDefaultLayout,
+  RPLayout,
   RPPages,
   RPProvider,
-} from "@pdf-viewer/react";
+} from "@react-pdf-kit/viewer";
 
 const DEFAULT_PDF_URL = 
-  "https://cdn.codewithmosh.com/image/upload/v1721763853/guides/web-roadmap.pdf";
+  "https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf";
 
 const AppPdfViewer = (props) => {
   const { showToolbar = true, providerProps, defaultLayoutProps } = props;
@@ -74,9 +74,9 @@ const AppPdfViewer = (props) => {
     <div>
       <RPProvider src={DEFAULT_PDF_URL} {...providerProps}>
         {showToolbar ? (
-          <RPDefaultLayout {...defaultLayoutProps}>
+          <RPLayout toolbar {...defaultLayoutProps}>
             <RPPages />
-          </RPDefaultLayout>
+          </RPLayout>
         ) : (
           <div style={{ width: "100%", height: "550px" }}>
             <RPPages />
@@ -95,7 +95,7 @@ export default AppPdfViewer;
 ```jsx
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import AppPdfViewer from "@site/src/components/AppPdfViewer";
-import { RPConfig } from "@pdf-viewer/react";
+import { RPConfig } from "@react-pdf-kit/viewer";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -137,13 +137,13 @@ For more examples, please refer to the `src/pages/index.jsx` file in this reposi
 
 _Remark: If you would like more examples, feel free open an issue._
 
-For more configurations, please check the [documentation](https://docs.react-pdf.dev) site.
+For more configurations, please check the [documentation](https://docs.react-pdf-kit.dev/) site.
 
 ## Meta
 
-- Homepage: [https://www.react-pdf.dev](https://www.react-pdf.dev)
-- Docs: [https://docs.react-pdf.dev](https://docs.react-pdf.dev)
+- Homepage: [https://www.react-pdf-kit.dev/](https://www.react-pdf-kit.dev/)
+- Docs: [https://docs.react-pdf-kit.dev/](https://docs.react-pdf-kit.dev/)
 
 ---
 
-Thank you for using React PDF! We hope this toolkit helps you build amazing React.js applications. If you have any questions or need further assistance on this example, please feel free to open an issue. Happy coding!
+Thank you for using React PDF Kit! We hope this toolkit helps you build amazing React.js applications. If you have any questions or need further assistance on this example, please feel free to open an issue. Happy coding!
